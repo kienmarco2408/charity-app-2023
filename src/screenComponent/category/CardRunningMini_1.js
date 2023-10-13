@@ -1,14 +1,19 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import {
   AntDesign,
   Ionicons,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const CardRunningMini_1 = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{ height: 342, backgroundColor: "white", borderRadius: 10 }}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("DetailNews")}
+      style={{ height: 342, backgroundColor: "white", borderRadius: 10 }}
+    >
       <View>
         <Image source={require("../../storages/cardcategory/img2.png")} />
       </View>
@@ -138,7 +143,7 @@ const CardRunningMini_1 = () => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

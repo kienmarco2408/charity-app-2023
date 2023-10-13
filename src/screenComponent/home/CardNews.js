@@ -1,16 +1,24 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import {
   AntDesign,
   Ionicons,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const CardNews = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{ height: 342, backgroundColor: "white", borderRadius: 10 }}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("DetailNews")}
+      style={{ height: 342, backgroundColor: "white", borderRadius: 10 }}
+    >
       <View>
-        <Image source={require("../../storages/cardnews/news1.png")} />
+        <Image
+          source={require("../../storages/cardnews/news1.png")}
+          style={{ width: "100%" }}
+        />
       </View>
       <View
         style={{
@@ -131,7 +139,7 @@ const CardNews = () => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

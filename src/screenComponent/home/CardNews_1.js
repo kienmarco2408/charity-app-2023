@@ -5,10 +5,13 @@ import {
   Ionicons,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const CardNews_1 = () => {
+  const navigation = useNavigation();
   return (
-    <View>
+    <TouchableOpacity onPress={() => navigation.navigate("DetailNews")}>
       <View
         style={{
           width: 280,
@@ -128,7 +131,7 @@ const CardNews_1 = () => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
